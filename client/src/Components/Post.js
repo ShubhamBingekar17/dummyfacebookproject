@@ -16,13 +16,13 @@ const Post = (post) => {
 
   const [ comment , setComment ] = useState([]);
   const getComments = () => {
-    fetch('https://dummyfacebook.herokuapp.com/post/comment')
-      .then((response) => {
-        return response.json();
-      }).then((data) => {
-        setComment(data)
-        return
-      })
+    // fetch('https://dummyfacebook.herokuapp.com/post/comment')
+    //   .then((response) => {
+    //     return response.json();
+    //   }).then((data) => {
+    //     setComment(data)
+    //     return
+    //   })
   }
   getComments()
 
