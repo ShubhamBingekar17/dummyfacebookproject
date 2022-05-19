@@ -36,9 +36,10 @@ const Post = (post) => {
       // console.log(comment)
       // dispatch(updatePost(id , comment));
     }
-    
-    // console.log(post.post.title)
-    // console.log(post.post.comment ? post.post.comment.cmt.profileImage : '')
+
+    // console.log(cmt+""+String(1))
+
+    // console.log(post.post.comment ? post.post.comment.mssm : '')
 
   return (
     <Container mt={5} >
@@ -57,18 +58,18 @@ const Post = (post) => {
             <Stack direction='row' justifyContent={'space-between'} p={3}>
               <Stack direction='row'>
                 <img src={LikeIcon} alt='like'/>
-                <Text size='sm'>{post.post.likeCount} Others Liked this</Text>
+                <Text fontSize='sm' p={1}>{post.post.likeCount} Others Liked this</Text>
               </Stack>
-              <Stack direction='row'>
-                <Text>{post.post.comment? '1' : '0'} Comments</Text>
-                <Text>{randomnumber} Shares</Text>
+              <Stack direction='row' p={1}>
+                <Text fontSize='sm'display={window.innerWidth < 600? 'none': 'block'}>{post.post.comment? '1' : '0'} Comments</Text>
+                <Text fontSize='sm'>{randomnumber} Shares</Text>
               </Stack>
             </Stack>
-            <Stack m={3} direction='row' className='optional_box'>
+            <Stack mt={2} mb={2} spacing={0} direction='row' className='optional_box'>
             <Button colorScheme={'none'} width='100%' leftIcon={<img src={LikeIcon} alt='like'/>} color='black' variant='solid' onClick={() => dispatch(likePost(post.post._id))}>
               Like
             </Button>
-            <Button width='100%' leftIcon={<img src={CommentIcon} alt='comment' />} colorScheme='white'  color='black'  variant='solid' onClick={() => setViewComments(true)}>
+            <Button width='100%' if leftIcon={<img src={CommentIcon} alt='comment' />} colorScheme='white'  color='black'  variant='solid' onClick={() => setViewComments(true)}>
               Comment
             </Button>
             <Button  width='100%' leftIcon={<img src={ShareIcon} alt='comment' />} colorScheme='white' color='black' variant='solid'>
@@ -97,7 +98,8 @@ const Post = (post) => {
                         <Text fontSize='md' as='b'>{post.post.comment.cmt.profileName}</Text>
                       <Text fontSize='sm' >{post.post.comment.cmt.message}</Text>
                       </Box>
-                  </Stack>:
+                  </Stack>
+                  :
                   <></>
                   }
                     <Text cursor={'pointer'} onClick=''>View more comments</Text>

@@ -22,10 +22,10 @@ const Navbar = () => {
     
 
   return (
-    <Stack direction='row' className='navbar' mt={1} p={1} justifyContent={'space-between'}>
-        <Stack spacing={1} direction='row' ml={4}>
+    <Stack direction='row' className='navbar' spacing={2} mt={1} p={1} justifyContent={'space-between'} maxWidth='100%'>
+        <Stack spacing={1} direction='row' ml={2}>
         
-        <Input placeholder='Search' value='' maxWidth={300}  borderRadius={50}/>
+        <Input placeholder='Search' value='' maxWidth={250}  borderRadius={50}/>
         <IconButton
             colorScheme='blue'
             aria-label='Search database'
@@ -35,17 +35,12 @@ const Navbar = () => {
         <Stack spacing={1} direction='row' me={10}>
         <img className='profile_img_main' color='black' src={user[0] ? user[0].profile : profile} alt='' borderRadius='50%' />
         <Text size='xl' value='' display={window.innerWidth < 600? 'none': 'block'} p={2}>{user[0] ? user[0].name : 'Auto Loging...'}</Text>
-        <IconButton 
+        {/* <IconButton 
         
         aria-label='Search database' 
         icon={<img color='black' src={messenger} alt='' />}  
         isRound={true}
-        />
-        <IconButton 
-        aria-label='Search database' 
-        icon={<BellIcon />}  
-        isRound={true}
-        />
+        /> */}
         </Stack>
     </Stack>
   )
