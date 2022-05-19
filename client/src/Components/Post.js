@@ -37,15 +37,15 @@ const Post = (post) => {
       // dispatch(updatePost(id , comment));
     }
     
-    console.log(post.post.title)
-    console.log(post.post.comment ? post.post.comment.cmt : '')
+    // console.log(post.post.title)
+    // console.log(post.post.comment ? post.post.comment.cmt.profileImage : '')
 
   return (
     <Container mt={5} >
           <Box shadow='md' borderWidth='1px' maxWidth={800} margin={"auto"}  className='post_container'>
             <Stack p={3} mt={2} mb={2}>
               <Stack direction='row' mt={-2}>
-                <img className='profile_img' color='black' src={profile} alt=''/>
+              <img className='profile_img' color='black' src={post.post.profileImage? post.post.profileImage: profile} alt=''/>
                 <Stack spacing={-0.5}>
                   <Text>{post.post.creator}</Text>
                   <Text fontSize='12px'>{moment(post.post.createdAt).fromNow()}</Text>
@@ -79,7 +79,7 @@ const Post = (post) => {
                 viewComments?
                 <Stack p={3}>
                     <Stack direction='row' mb={2}>
-                        <img className='profile_img' color='black' src={profile} alt='' borderRadius='50%' />
+                        <img className='profile_img' color='black' src={post.post.profileImage? post.post.profileImage: profile} alt='' borderRadius='50%' />
                         <InputGroup  mt={4} p={1}>
                         <Input className='comments' wordBreak={true} borderRadius={20} placeholder='Write a comment...' value={comment.message} onChange={(e) => setComment({...comment , message: e.target.value})}/>
                         <InputRightElement cursor={'pointer'} mt={1} children={<CheckIcon color='green.500' />} onClick={() => handleComment(post.post._id)} />
@@ -97,7 +97,6 @@ const Post = (post) => {
                         <Text fontSize='md' as='b'>{post.post.comment.cmt.profileName}</Text>
                       <Text fontSize='sm' >{post.post.comment.cmt.message}</Text>
                       </Box>
-  
                   </Stack>:
                   <></>
                   }
