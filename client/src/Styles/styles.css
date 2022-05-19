@@ -1,0 +1,37 @@
+.navbar {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),0 2px 4px -1px rgba(0, 0, 0, 0.06);;
+}
+.button{
+    padding: 8px;
+}
+.post_container{
+    border-radius: 10px;
+}
+
+.button:hover{
+    background-color: rgb(217, 217, 217);
+}
+
+.optional_box{
+    border-top: 1px solid rgb(217, 217, 217);
+    border-bottom: 1px solid rgb(217, 217, 217);
+}
+.profile_img{
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin: auto 0;
+}
+.comments{
+    width:90%;
+    height: fit-content; 
+    background-color:rgba(0, 0, 0, 0.15);
+    text-align: left;
+    justify-items: center;
+    border-radius: 20px;
+}
+.profile_img_main{
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
