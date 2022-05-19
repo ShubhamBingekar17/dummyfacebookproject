@@ -38,6 +38,7 @@ const Post = (post) => {
     }
     
     console.log(post.post.title)
+    console.log(post.post.comment ? post.post.comment.cmt : '')
 
   return (
     <Container mt={5} >
@@ -59,7 +60,7 @@ const Post = (post) => {
                 <Text size='sm'>{post.post.likeCount} Others Liked this</Text>
               </Stack>
               <Stack direction='row'>
-                <Text>{comment.length} Comments</Text>
+                <Text>{post.post.comment? '1' : '0'} Comments</Text>
                 <Text>{randomnumber} Shares</Text>
               </Stack>
             </Stack>
@@ -86,14 +87,20 @@ const Post = (post) => {
                         </InputGroup>
                     </Stack>
                     {
-                    //   post.post.comment !== []? 
-                    //   post.post.comment.map((cmt, i) =>
-                    //   <Stack direction='row' mt={2}>
-                    //     <img className='profile_img' color='black' src={profile} alt='' borderRadius='50%' />
-                    //     <Text className='comments' mt={4} p={1} pl={2}>{cmt.message}</Text>
-                    // </Stack>):
-                    // <></>
+                      console.log("dattaaa"+post.post.createdAt)
                     }
+                   {
+                    post.post.comment ? 
+                    <Stack direction='row' mt={2}>
+                      <img className='profile_img' color='black' src={post.post.comment.cmt.profileImage} alt='' borderRadius='50%' />
+                      <Box className='comments' mt={4} p={1} pl={4}>
+                        <Text fontSize='md' as='b'>{post.post.comment.cmt.profileName}</Text>
+                      <Text fontSize='sm' >{post.post.comment.cmt.message}</Text>
+                      </Box>
+  
+                  </Stack>:
+                  <></>
+                  }
                     <Text cursor={'pointer'} onClick=''>View more comments</Text>
                 </Stack>
                 :
