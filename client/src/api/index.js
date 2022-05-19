@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-const url = 'http://localhost:5000/post';
+const url = 'https://dummyfacebook.herokuapp.com/post';
 
-export const getUser = () => axios.getUser('http://localhost:5000/post/user');
+// export const getUser = () => axios.getUser('https://dummyfacebook.herokuapp.com/posts');
 export const fetchPosts = () => axios.get(url);
 export const createPost = (newPost) => axios.post(url, newPost);
 export const likePost = (id) => axios.patch(`${url}/${id}/likePost`);

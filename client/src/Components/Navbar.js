@@ -10,7 +10,7 @@ const Navbar = () => {
     const [user, setUser] = useState([]);
 
     const getUser = () => {
-      fetch('http://localhost:5000/post/user')
+      fetch('https://dummyfacebook.herokuapp.com/post/user')
         .then((response) => {
           return response.json();
         }).then((data) => {
@@ -18,6 +18,7 @@ const Navbar = () => {
           return
         })
     }
+    getUser()
     
 
   return (
